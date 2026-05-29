@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeynep Musaağaoğlu</title>
+<style>
+  :root{
+    --bg:#fbfaf8; --fg:#1c1b1a; --muted:#6b6862; --accent:#7a4f3a;
+    --card:#ffffff; --border:#e7e3dc; --maxw:760px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:Georgia,'Times New Roman',serif; color:var(--fg);
+    background:var(--bg); line-height:1.65; font-size:17px;
+  }
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:48px 24px 80px;}
+
+  header{display:flex; gap:28px; align-items:center; flex-wrap:wrap; margin-bottom:8px;}
+  .photo{
+    width:130px; height:130px; border-radius:50%; object-fit:cover;
+    border:1px solid var(--border); background:#eee; flex-shrink:0;
+  }
+  .intro h1{margin:0 0 4px; font-size:30px; letter-spacing:.3px;}
+  .intro .role{color:var(--muted); margin:0 0 10px; font-size:16px;}
+  .links{font-size:15px;}
+  .links a{margin-right:14px; white-space:nowrap;}
+
+  nav{
+    margin:36px 0 8px; padding-bottom:10px; border-bottom:1px solid var(--border);
+    font-size:15px;
+  }
+  nav a{margin-right:20px;}
+
+  section{margin-top:40px;}
+  section h2{
+    font-size:14px; text-transform:uppercase; letter-spacing:1.5px;
+    color:var(--accent); margin:0 0 16px; font-family:Helvetica,Arial,sans-serif;
+  }
+  p{margin:0 0 14px;}
+
+  .pub{margin-bottom:22px;}
+  .pub .title{font-weight:bold;}
+  .pub .meta{color:var(--muted); font-size:15px;}
+  .pub .abs{font-size:15px; margin-top:6px;}
+  .pub .tag{
+    display:inline-block; font-size:12px; font-family:Helvetica,Arial,sans-serif;
+    color:var(--accent); border:1px solid var(--border); border-radius:3px;
+    padding:1px 7px; margin-right:6px; text-transform:uppercase; letter-spacing:.5px;
+  }
+
+  .btn{
+    display:inline-block; font-family:Helvetica,Arial,sans-serif; font-size:14px;
+    border:1px solid var(--accent); color:var(--accent); border-radius:5px;
+    padding:8px 16px; margin-top:4px;
+  }
+  .btn:hover{background:var(--accent); color:#fff; text-decoration:none;}
+
+  .two{display:grid; grid-template-columns:120px 1fr; gap:4px 18px; font-size:16px;}
+  .two .yr{color:var(--muted);}
+
+  footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--border);
+    color:var(--muted); font-size:14px; font-family:Helvetica,Arial,sans-serif;}
+  @media(max-width:520px){ header{flex-direction:column; text-align:center;} .two{grid-template-columns:1fr;} .two .yr{margin-top:8px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img class="photo" src="profile.jpg" alt="Zeynep Musaağaoğlu">
+    <div class="intro">
+      <h1>Zeynep Musaağaoğlu</h1>
+      <p class="role">PhD Candidate in Behavioral &amp; Experimental Economics<br>GATE-LSE · Université Lumière Lyon 2, France</p>
+      <div class="links">
+        <a href="mailto:musaagaoglu@gate.cnrs.fr">Email</a>
+        <a href="#">Google&nbsp;Scholar</a>
+        <a href="#">LinkedIn</a>
+        <a href="https://github.com/USERNAME">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#cv">CV</a>
+  </nav>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I am a PhD candidate in behavioral and experimental economics at GATE-Lyon and
+    Université Lumière Lyon 2, supervised by Eugenio Verrina and Fabio Galeotti. I use
+    field and laboratory experiments to study how people behave under social and
+    organizational incentives.</p>
+    <p>My research fields are behavioral and experimental economics and microeconomics,
+    with secondary interests in gender economics and organizational economics. Before
+    Lyon, I completed an M.Sc. in Economics at the University of Copenhagen and a
+    B.Sc. in Economics (Honors) at Middle East Technical University.</p>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+
+    <div class="pub">
+      <span class="tag">Working paper</span>
+      <div class="title">Signaling in Informal Contracts — A Field Experiment in Volunteer Management</div>
+      <div class="meta">Single author · draft in preparation, 2025</div>
+      <div class="abs">A field experiment (n&nbsp;=&nbsp;683) at a large-scale event evaluating signaling
+      mechanisms in volunteer management. Formal commitment significantly reduces no-shows and
+      late cancellations but decreases overall shift completion; trust-based signals do not affect
+      no-show rates but improve organizational efficiency by fostering earlier cancellations —
+      highlighting the trade-offs between mandatory confirmation and relational signaling.</div>
+    </div>
+
+    <div class="pub">
+      <span class="tag">Work in progress</span>
+      <div class="title">(Mis)perceived Gender Norms, Sanctions and the Gender Gap in Confidence Signaling</div>
+      <div class="meta">with E. Verrina · design stage, 2026</div>
+    </div>
+
+    <p style="color:var(--muted);font-size:15px;">Research interests: behavioral and experimental
+    economics, microeconomics, gender economics, organizational economics.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="pub">
+      <div class="title">[Project name]</div>
+      <div class="meta">A short one-line description of the project. (Edit or remove this section.)</div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>CV</h2>
+    <p>A full version of my curriculum vitae is available below.</p>
+    <a class="btn" href="cv.pdf">Download CV (PDF)</a>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Zeynep Musaağaoğlu · Last updated May 2026
+  </footer>
+
+</div>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
