@@ -64,6 +64,14 @@
   footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--border);
     color:var(--muted); font-size:14px; font-family:Helvetica,Arial,sans-serif;}
   @media(max-width:520px){ header{flex-direction:column; text-align:center;} .two{grid-template-columns:1fr;} .two .yr{margin-top:8px;} }
+
+  #toast{
+    position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--fg); color:#fff; font-family:Helvetica,Arial,sans-serif; font-size:14px;
+    padding:11px 18px; border-radius:6px; opacity:0; pointer-events:none;
+    transition:opacity .25s, transform .25s; z-index:99;
+  }
+  #toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
 </style>
 </head>
 <body>
@@ -75,10 +83,8 @@
       <h1>Zeynep Musaağaoğlu</h1>
       <p class="role">PhD Candidate in Behavioral &amp; Experimental Economics<br>GATE-LSE · Université Lumière Lyon 2, France</p>
       <div class="links">
-        <a href="mailto:musaagaoglu@gate.cnrs.fr">Email</a>
-        <a href="#">Google&nbsp;Scholar</a>
-        <a href="#">LinkedIn</a>
-        <a href="https://github.com/USERNAME">GitHub</a>
+        <a href="mailto:musaagaoglu@gate.cnrs.fr" id="emailLink">Email</a>
+        <a href="https://www.linkedin.com/in/zeynepmusaagaoglu/">LinkedIn</a>
       </div>
     </div>
   </header>
@@ -86,7 +92,7 @@
   <nav>
     <a href="#about">About</a>
     <a href="#research">Research</a>
-    <a href="#projects">Projects</a>
+    <a href="research.html">Research</a>
     <a href="#cv">CV</a>
   </nav>
 
@@ -104,34 +110,9 @@
 
   <section id="research">
     <h2>Research</h2>
-
-    <div class="pub">
-      <span class="tag">Working paper</span>
-      <div class="title">Signaling in Informal Contracts — A Field Experiment in Volunteer Management</div>
-      <div class="meta">Single author · draft in preparation, 2025</div>
-      <div class="abs">A field experiment (n&nbsp;=&nbsp;683) at a large-scale event evaluating signaling
-      mechanisms in volunteer management. Formal commitment significantly reduces no-shows and
-      late cancellations but decreases overall shift completion; trust-based signals do not affect
-      no-show rates but improve organizational efficiency by fostering earlier cancellations —
-      highlighting the trade-offs between mandatory confirmation and relational signaling.</div>
-    </div>
-
-    <div class="pub">
-      <span class="tag">Work in progress</span>
-      <div class="title">(Mis)perceived Gender Norms, Sanctions and the Gender Gap in Confidence Signaling</div>
-      <div class="meta">with E. Verrina · design stage, 2026</div>
-    </div>
-
-    <p style="color:var(--muted);font-size:15px;">Research interests: behavioral and experimental
-    economics, microeconomics, gender economics, organizational economics.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="pub">
-      <div class="title">[Project name]</div>
-      <div class="meta">A short one-line description of the project. (Edit or remove this section.)</div>
-    </div>
+    <p>My research fields are behavioral and experimental economics, microeconomics,
+    gender economics, and organizational economics. See my
+    <a href="research.html">research page</a> for working papers and projects in progress.</p>
   </section>
 
   <section id="cv">
@@ -145,6 +126,25 @@
   </footer>
 
 </div>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<div id="toast">E-mail address copied to clipboard</div>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const EMAIL="musaagaoglu@gate.cnrs.fr";
+const toast=document.getElementById('toast');
+document.getElementById('emailLink').addEventListener('click',function(e){
+  e.preventDefault();
+  navigator.clipboard.writeText(EMAIL).then(showToast).catch(function(){
+    // fallback for older browsers
+    const t=document.createElement('textarea'); t.value=EMAIL; document.body.appendChild(t);
+    t.select(); document.execCommand('copy'); document.body.removeChild(t); showToast();
+  });
+});
+function showToast(){
+  toast.classList.add('show');
+  clearTimeout(showToast._t);
+  showToast._t=setTimeout(()=>toast.classList.remove('show'),2200);
+}
+</script>
 </body>
 </html>
